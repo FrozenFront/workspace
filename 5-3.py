@@ -19,7 +19,7 @@ def leds(value):
             return decimal2binary(2**i-1)
     return decimal2binary(0)
 
-def abc():
+def adc():
     value = 0
     for k in range (7,-1,-1):
         gpio.output(dac,decimal2binary(2**k+value))
@@ -30,7 +30,7 @@ def abc():
 
 try:
     while (True):
-        gpio.output(led,leds(abc()))
+        gpio.output(led,leds(adc()))
 except KeyboardInterrupt:
     print("\n Программа остановленна с клавиатуры")
 finally:
